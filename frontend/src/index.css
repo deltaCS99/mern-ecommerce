@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main {
+  min-height: 90vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+a:hover {
+  color: #ffff;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1{
+  font-size: 1.4rem;
+  padding:0.1rem ;
+}
+
+h2{
+  font-size: 1.8rem;
+  padding:1rem 0;
+}
+
+.catergory-card{
+  background-color: transparent;
+}
+.catergory-img{
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card-title{
+  font-size: 120%;
+}
+
+.form-control{
+  width: 80%;
+}
+
+@media (max-width: 767px){
+  .cart-items-cart-card{
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+  .catergory-img{
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .card-title{
+    font-size: 130%;
+  }
+}
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1024px){
+  .catergory-img{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .card-title{
+    font-size: 150%;
+  }
+}
+
