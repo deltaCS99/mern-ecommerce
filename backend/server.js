@@ -2,6 +2,7 @@ import data from './data/products.js'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import express from 'express'
+import cors from 'cors'
 
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
@@ -11,6 +12,7 @@ dotenv.config()
 connectDB()
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Hey this is my API running 🥳')

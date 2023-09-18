@@ -1,27 +1,29 @@
 import axios from "axios";
 import { createAsyncThunk} from "@reduxjs/toolkit";
 
+const BASE_URL = "https://yoshop-backend.onrender.com"
+
 export const getProducts = createAsyncThunk(
   'products/getProducts', async ()=> { 
-    const {data} = await axios.get('/api/products')
+    const {data} = await axios.get(`${BASE_URL}/api/products`)
     return data
 })
 
 export const getCatergories = createAsyncThunk(
   'catergories/getCatergories', async () => { 
-    const {data} = await axios.get('/api/catergories')
+    const {data} = await axios.get(`${BASE_URL}/api/catergories`)
     return data
 })
 
 export const getProduct = createAsyncThunk(
   'product/getProduct', async (id) => { 
-    const {data} = await axios.get(`/api/products/${id}`)
+    const {data} = await axios.get(`${BASE_URL}/api/products/${id}`)
     return data
 })
 
 export const getCartProduct = createAsyncThunk(
   'cart/getCartProduct', async (arg,{getState}) => { 
-    const {data} = await axios.get(`/api/products/${arg.id}`)
+    const {data} = await axios.get(`${BASE_URL}/api/products/${arg.id}`)
     
     const cartObj = {
       product:data._id,
@@ -37,7 +39,7 @@ export const getCartProduct = createAsyncThunk(
 
 export const getCatergory = createAsyncThunk(
   'catergory/getCatergory', async (catergory) => { 
-    const {data} = await axios.get(`/api/catergories/${catergory}`)
+    const {data} = await axios.get(`${BASE_URL}/api/catergories/${catergory}`)
     return data
 })
 
@@ -51,7 +53,7 @@ export const login = createAsyncThunk(
     }
 
     try{
-    const {data} = await axios.post('/api/users/login',{ email:arg.email,password:arg.password }, config)
+    const {data} = await axios.post(`${BASE_URL}/api/users/login`,{ email:arg.email,password:arg.password }, config)
     localStorage.setItem('userInfo', JSON.stringify(data))
 
     return data
@@ -72,7 +74,7 @@ export const register = createAsyncThunk(
 
     try{
 
-    const {data} = await axios.post('/api/users',{ name:arg.name,email:arg.email,password:arg.password }, config)
+    const {data} = await axios.post(`${BASE_URL}/api/users`,{ name:arg.name,email:arg.email,password:arg.password }, config)
 
     dispatch({type:'user/login/fulfilled', payload:data})
 
@@ -96,7 +98,7 @@ export const getUserDetails = createAsyncThunk(
 
     try{
 
-    const {data} = await axios.get(`/api/users/${id}`, config)
+    const {data} = await axios.get(`${BASE_URL}/api/users/${id}`, config)
 
     return data
     
@@ -118,7 +120,7 @@ export const updateUserProfile = createAsyncThunk(
 
     try{
 
-    const {data} = await axios.put(`/api/users/profile`, user, config)
+    const {data} = await axios.put(`${BASE_URL}/api/users/profile`, user, config)
 
     return data
     
