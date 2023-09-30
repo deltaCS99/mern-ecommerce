@@ -29,21 +29,4 @@ This project follows a structured folder organization:
 - `/backend`: Contains the Node.js backend code responsible for handling server-side logic.
 - `/frontend`: Houses the React frontend code, delivering a responsive and interactive user interface.
 
-## Contribution
-
-Contributions to this project are welcome! If you'd like to contribute, follow these steps:
-
-1. Fork the project.
-2. Create a new feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to your branch (`git push origin feature/your-feature`).
-5. Open a pull request to propose your changes.
-
-## License
-
-This project is licensed under the MIT License. Please refer to the [LICENSE](LICENSE) file for further details.
-
-## Support
-
-If you have any questions or need assistance, feel free to [open an issue](https://github.com/deltaCS99/YoShop/issues). I'm here to help and open to learn!
 
