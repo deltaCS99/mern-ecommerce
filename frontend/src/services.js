@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk} from "@reduxjs/toolkit";
 
-const BASE_URL = "https://mern-ecommerce-deltacs99.vercel.app/"
+const BASE_URL = "https://mern-ecommerce-deltacs99.vercel.app"
 
 export const getProducts = createAsyncThunk(
   'products/getProducts', async ()=> { 
